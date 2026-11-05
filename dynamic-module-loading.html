@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Module Loading</title>
+    <style>
+
+        .container {
+            display: flex;
+            border: 2px solid black;
+            padding: 10px 10px;
+            border-radius: 10px;
+            flex-direction: column;
+        }
+
+        .content {
+            margin: 5px 0px;
+            border-radius: 8px;
+        }
+        input {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            width: 80px;
+        }
+        button:hover {
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label class="content" for="name">Name</label>
+        <input class="content" type="text" name="name" id="name">
+        <button class="content" type="button" id="simpan">Simpan</button>
+    </div>
+    
+    <script type="module">
+
+        /*
+            Dynamic Module Loading 
+        => Saat kita menggunakan Module demgam cara Inport, maka semua Module akan di Load
+        => Pada Kenyataan Nya kadang kita tidak ingin meload semua Module di awal, kita hanya ingin
+            Meload Module ketika dibutuhkan saja, ini akan menghemat bandwith jaringan juga, karena tidak 
+            perlu otomatis mendownload semua semua Module di Awal
+        => JavaScript mendukung Dynamic Module Loading, caranya kita bisa menggunakan function import()
+            dimana hasil nya berupa Promise<ModuleObhect>
+        */ 
+        document.getElementById("simpan").onclick = function() {
+            // Return berupa Promise<ModuleObject> sehingga perlu then (lalu) mau ngapain. 
+            import("./script/dynamic-module-loading.js").then(module => {
+                const name = document.getElementById("name").value
+                console.log(name)
+                module.allertName(name)
+            })
+        }
+
+    </script>
+</body>
+</html>

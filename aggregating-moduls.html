@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggregating Modules</title>
+</head>
+<body>
+    <script type="module">
+
+        /*
+            Aggregating Modules
+        => Ada waktunya kadang kita perlu menggabungkan beberapa Module menjadi Satu
+            agar penggunaannya lebih Sederhana
+        => Jika Module sudah banyak, maka ketika butuh banyak code dari banyak Module, kita harus import nama modul
+            satu persatu itu akan lebih lama 
+        => Oleh karena itu melakukan penggabungan , kita bisa membiat Module Aggregate yang isi nya    
+            Menggabungkan export dari Module-Module Lain 
+        */
+
+        /*
+            Untuk Panggil Aggregating Module 
+        => export {a,b,c,d} from "./module.js" 
+            -> a,b,c yang di dalam nya adalah Module-Module yang di panggil Oleh Aggregating Module
+        */ 
+
+        import {Person, sum, sayHello, sayGoodBye} from "./script/aggregating-modules.js"
+
+        const maman = new Person("maman")
+        console.log(maman)
+        console.log(sum(10,10))
+
+        sayHello("Maman")
+        sayGoodBye("Maman")
+
+
+
+    </script>
+</body>
+</html>

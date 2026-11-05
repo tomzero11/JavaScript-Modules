@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Object</title>
+</head>
+<body>
+    <script type="module">
+
+        /*
+            Module Object 
+        => Ketika membuat module berisikan banyak sekali Export data, maka melakukan Import satu persatu
+            akan terlihat berantakan 
+        => Rekomendasinya ketika kita ingin mengimport Module yang sangat Banyak ketika Export datanya
+            gunakan Module Object 
+        => Module Object sederhananya adalah Object JavaScript yang berisi Attribute hasil yang di Export 
+            pada Module 
+        => Cara membuat Module Object bisa lakukan seperti ini : 
+            -> import * as NamaModuleObject(Bebas) from "./module.js"
+        => Selanjutnya kita bisa gunakan NamaModuleObject sebagai Object Yang membungkus sebuah Module
+        */
+
+        /*
+            Module Object cara kerja nya kurang lebih sama dengan Module Alias
+        => Jika Casenya Import Module Named nya sedikit Best Practice gunakan Alias 
+        => Jika case nya Import Module Named nya banyak lebih di rekomendasikan menggunakan Module Object 
+            Karena Module Object akan membungkus Semua Module Named menjadi sebuah Object
+        */ 
+
+        // Import * as NamaModuleObject (Mereprensentasikan Module) from "./moduls.js"
+
+        // Contoh Module Object
+
+        // Object name yang membungkus semua Module Named menjadi sebuah Object
+        import * as name from "./script/module-object.js"
+        
+        console.log(name.firstName)
+        console.log(name.middleName)
+        console.log(name.lastName)
+        name.sayHello()
+        const maman = new name.Person()
+        console.log(maman)
+
+    </script>
+</body>
+</html>

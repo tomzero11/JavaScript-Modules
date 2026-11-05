@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default and Named</title>
+</head>
+<body>
+    <script type="module">
+
+        /*
+            Default dan Named Export
+        => Dalam satu Module, kita bisa menggabungkan export default dan export named
+        => Yang tidak boleh adalah, dalam satu module membuat lebih dari satu export default ini akan error 
+        => Cara import default dan Named secara bersamaan bisa menggunakan perintah 
+
+            -> import defaultAlias, {named1, named2} from "module.js"
+        */ 
+
+        
+        // Conotoh  Default and Named 
+        import { default as authorName, name, content } from "./script/default-and-named.js"
+        console.log(name)
+        console.log(content)
+        console.log(authorName)
+
+        /*
+            Best Practies (Rekomendasi)
+        => Bedakan antara Default dan Named, karena jika digabungkan kadang akan membingungkan
+            ketika melakukan import 
+        => Sebisa mungkin selalu gunakan Export Named dibandingkan dengan Export Default
+        */ 
+
+    </script>
+</body>
+</html>

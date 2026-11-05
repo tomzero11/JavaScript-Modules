@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alias</title>
+</head>
+<body>
+    <script type="module">
+
+        /*
+            Alias
+        => Saat kita membuat Aplikasi JavaScript, Semakin lama kemungkinan module akan semakin banyak
+        => Dan bisa saja akan ada Nama Variable atau nama Function atau nama Class yang sama antar Module
+        => Hal ini akan menyulitkan ketika ada module yang menggunakan beberapa Module, Namun ternyata Variable, 
+            Function atau Class nya memiliki nama deklarasi yang sama
+        => Module fitur Alias, dimana kita bisa mengubah nama variable function atau class nya 
+        => Kita Hanya memberi Alias tidak merubah nama Asli dari Variable Function atau Class nya 
+        */ 
+
+        /*
+            Import Alias
+        => Menggunakan Method Import kemudian di ikuti dengan as
+        */ 
+
+        // Contoh Alias
+        import {company, sum , Person} from "./script/export-multiple.js"
+        // Memodifikasi nama variable Function dan Class menggunakan Alias (as)
+        import {company as perusahaan, sum as total, Person as Orang} from "./script/alias.js"
+        
+
+        console.log(perusahaan)
+        console.log(total(1,2))
+        const orang = new Orang()
+        
+
+    </script>
+</body>
+</html>

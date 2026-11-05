@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Default</title>
+</head>
+<body>
+    <script type="module">
+
+        // export default function
+        import {default as sayHelloFunction} from "./script/export-default-function.js"
+        sayHelloFunction("Mamad")
+
+        // export default variable
+        import {default as nameVariable} from "./script/export-default-variable.js"
+        console.log(nameVariable)
+        
+        // Export default Class
+        import {default as className} from "./script/export-default-class.js"
+        const mamad = new className("mamad")
+        mamad.sayHello()
+    </script>
+</body>
+</html>
